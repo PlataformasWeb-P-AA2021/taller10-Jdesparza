@@ -1,0 +1,20 @@
+<h3>Listado de Parroquias y sus Barrios</h3>
+
+<ul>
+ {% for p in parroquia %}
+
+  <li>
+    {{p.nombre}}
+    <ul>
+      {% for b in p.losbarrios.all %}
+          <li>
+            <span>{{ b.nombre }}</span>
+          </li>
+      {% endfor %}
+    </ul>
+  </li>
+
+{% endfor %} 
+</ul>
+
+[<a href="{% url 'index' %}">Inicio</a>]

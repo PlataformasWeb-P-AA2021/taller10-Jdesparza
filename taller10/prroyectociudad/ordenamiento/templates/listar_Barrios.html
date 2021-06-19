@@ -1,0 +1,15 @@
+<h2>Listado Barrios</h3>
+
+{% for b in barrio %}
+    
+    {{b.nombre}}
+    <ul>
+        <li>Número de viviendas: {{b.numero_viviendas}}</li>
+        <li>Número de parques: {{b.numero_parques}}</li>
+        <li>Número de edificios: {{b.numero_edificios}}</li>
+        <li>Parroquia: {{b.parroquia.nombre}}</li>
+    </ul>
+    <br/>
+{% endfor %}
+
+[<a href="{% url 'index' %}">Inicio</a>]

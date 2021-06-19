@@ -1,0 +1,29 @@
+
+<h3>Parroquias y sus Barrios</h3>
+
+<ul>
+ {% for p in parroquia %}
+
+  <li>
+    {{p.nombre}} [<a href="{%url 'editar_Parroquia' p.id %}">Editar Parroquia</a>]
+    <ul>
+      {% for b in p.losbarrios.all %}
+          <li>
+            <span>
+              {{ b.nombre }} - Nro. Viviendas: {{ b.numero_viviendas }}
+            </span> [<a href="{%url 'editar_Barrio' b.id %}">Editar Barrio</a>]
+          </li>
+      {% endfor %}
+    </ul> <br>
+    [<a href="{%url 'crear_Barrio_Parroquia' p.id %}">crear Barrio</a>] <br><br>
+  </li>
+
+{% endfor %} 
+</ul>
+
+[<a href="{%url 'crear_Parroquia' %}">Agregar Parroquia</a>]
+[<a href="{%url 'crear_Barrio' %}">Agregar Barrio</a>]<br><br>
+[<a href="{%url 'listar_Parroquias_Barrios' %}">Ver Parroquias con sus Barrios</a>]
+[<a href="{%url 'listar_Barrios' %}">Ver Barrios</a>]<br>
+
+
